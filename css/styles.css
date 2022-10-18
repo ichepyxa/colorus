@@ -25,6 +25,7 @@ body {
 	color: #fff;
 	transition: background 0.3s ease-in-out;
 	cursor: pointer;
+	outline: none;
 	border-radius: 10px;
 }
 
@@ -49,6 +50,7 @@ body {
 	cursor: pointer;
 	padding: 10px;
 	border-radius: 10px;
+	outline: none;
 }
 
 .col button.black {
@@ -61,4 +63,33 @@ body {
 
 .col button.black:hover {
 	background: rgba(0, 0, 0, 0.15);
+}
+
+@keyframes modalHide {
+	0% {
+		opacity: 1;
+		visibility: visible;
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.modal {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.modal.hide {
+	animation: modalHide 1s ease-in-out;
+	opacity: 0;
+	visibility: hidden;
 }
